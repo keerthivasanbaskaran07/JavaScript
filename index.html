@@ -111,7 +111,7 @@
                     <li>OnSubmit</li>
                 </ul>
                 <div>
-                    <img src="./assets/moon.jpeg" onclick="eventEx()"/><br>
+                    <img src="./assets/moon.jpeg" onclick="eventEx()" /><br>
                     <input type="text" onkeyup="printTxtBxData()" id="evtTxtData" /><br>
                     <select id="stateVal" onchange="printSelectBoxData()">
                         <option>--Select--</option>
@@ -131,6 +131,7 @@
                     }
                     function printSelectBoxData(){
                         let sltBxData = document.getElementById("stateVal").value;
+                        
                         console.log(sltBxData);
                     }
                 </script>
@@ -197,8 +198,76 @@
                         let num2 = Number(document.getElementById('num2').value);
                         let result = num1 - num2;
                         document.getElementById('calcResult2').innerHTML = "The Result is " + result;
-                    }+
+                    }
                 </script>
+
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Calculator</div>
+            <div class="col">
+                <input type="number" name="num1" id="num3" placeholder="Number 1" class="form-control"/><br>
+                <input type="number" name="num2" id="num4" placeholder="Number 2" class="form-control"/><br>
+                <input type="text" id="calcMulDivResult" class="form-control" placeholder="Result" disabled/><br>
+                <p id="calcMulDivResult2"></p><br>
+                <button type="button" class="btn btn-success" onclick="calcMulti()">MULTI</button>
+                <button type="button" class="btn btn-success" onclick="calcDiv()">DIV</button>
+                
+                <script>
+                    function calcMulti(){
+                        let num1 = Number(document.getElementById('num3').value);
+                        let num2 = Number(document.getElementById('num4').value);
+                        let result = num1 * num2;
+                        document.getElementById('calcMulDivResult').value = result;
+                    }
+                    function calcDiv(){
+                        let num1 = Number(document.getElementById('num3').value);
+                        let num2 = Number(document.getElementById('num4').value);
+                        let result = num1 / num2;
+                        document.getElementById('calcMulDivResult2').innerHTML = "The Result is " + result;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                Conditions <br>
+                <ul>
+                    <li>If</li>
+                    <li>If-else</li>
+                    <li>If-else Ladder</li>
+                    <li>Nested If</li>
+                    <li>Switch</li>
+                </ul>
+            </div>
+            <div class="col">
+                <input type="number" id="ageCdn" name="ageCdn" class="form-control" onkeyup="conditionsEx()" placeholder="Enter the Age"/>
+                <p id="ageCdnResult"></p>
+                <script>
+                    function conditionsEx(){
+
+                        let age = Number(document.getElementById('ageCdn').value);
+                        let result = "";
+                        // + - * / % > < >= <= == != && || !
+                        if(age > 18){
+                            result = "You're Major";
+                        }else{
+                            result = "Minor";
+                        }
+                        document.getElementById('ageCdnResult').innerHTML = result;
+                    }
+                </script>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">Conditions Task</div>
+            <div class="col">
+                <ol>
+                    <li>Get 2 numbers from user and print the greatest number.</li>
+                    <li>Get a number from user and print whether it is odd or even.</li>
+                    <li>Get a bill amount from user, apply a discount of 10% when the bill is more than 1000Rs. </li>
+                    
+                </ol>
             </div>
         </div>
     </div>
