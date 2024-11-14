@@ -15,7 +15,7 @@
 
 <body>
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark theme-shadow" >
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark theme-shadow">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -101,7 +101,97 @@
     }
   </script>
 
-  
+
+  <div class="container">
+    <div class="row mt-4">
+      <div class="col">Product Name</div>
+      <div class="col">Price</div>
+      <div class="col">Count</div>
+      <div class="col">Total</div>
+      <div class="col">Action</div>
+    </div>
+    <div class="row mt-4">
+      <div class="col">
+        <select class="form-select">
+          <option>SuperMan</option>
+          <option>joker</option>
+          <option>batman</option>
+          <option>greenlatern</option>
+          <option>falsh</option>
+          <option>wonderMan</option>
+        </select>
+      </div>
+      <div class="col"><input type="text" id="empSalary" name="empSalary" onkeyup="getTotal()" class="form-control" />
+      </div>
+      <div class="col"><input type="text" id="empYears" name="empYears" onkeyup="getTotal()" class="form-control" />
+      </div>
+      <div class="col"><button type="button" class="btn btn-success">hike</button></div>
+      <div class="col">
+        <p id="hikeResult"></p>
+      </div>
+    </div>
+
+
+  </div>
+  <script>
+    function getTotal() {
+      let empSalary = Number(document.getElementById('empSalary').value);
+      let empYears = Number(document.getElementById('empYears').value);
+      let result = "";
+      if (empYears > 3 && empSalary < 25000) {
+        let hike = empSalary * 0.05;
+
+
+        result = " new hike salary is " + (empSalary + hike);
+      }
+
+      else {
+        result = "current salary is " + empSalary;
+      }
+
+
+      document.getElementById('hikeResult').innerHTML = result;
+    }
+  </script>
+  </div>
+
+  <div class="contaner">
+    <div class="row mt-5 mx-5">
+      <div class="col">Grade</div>
+      <div class="col">
+        <input type="number" id="grdMark" name="grdMark" class="form-control" onkeyup="conditionsEx()"
+          placeholder="Enter the mark" />
+        <button class="btn btn-warning " onclick="checkGrade()">Check</button>
+        <p id="gradeResult"></p>
+        <script>
+          function conditionsEx() {
+
+            let mark  = Number(document.getElementById('grdMark').value);
+            let result = "";
+            // + - * / % > < >= <= == != && || !
+            if (mark >= 90) {
+              if (mark >= 90)
+                result = "A+";
+              else
+                result = "A";
+            } else if (mark >= 80) {
+              result = "B";
+            } else if (mark >= 70) {
+              result = "C";
+            } else if (mark >= 60) {
+              result = "D";
+            } else {
+              result = "Fail ";
+            }
+            document.getElementById('gradeResult').innerHTML = result;
+          }
+
+
+        </script>
+      </div>
+    </div>
+  </div>
+
 
 </body>
 

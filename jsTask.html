@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Js Task</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -106,9 +106,211 @@
             </div>
         </div>
         <div class="row mt-4">
-            <div class="col"></div>
-            <div class="col"></div>
+            <div class="col">Employee Name</div>
+            <div class="col">salary</div>
+            <div class="col">years</div>
+            <div class="col">Total</div>
+            <div class="col">Hike</div>
         </div>
+        <div class="row mt-4">
+            <div class="col">
+                <select class="form-select">
+                    <option>SuperMan</option>
+                    <option>joker</option>
+                    <option>batman</option>
+                    <option>greenlatern</option>
+                    <option>falsh</option>
+                    <option>wonderMan</option>
+                </select>
+            </div>
+            <div class="col">
+                <input type="number" name="eSalary" id="eSalary" placeholder="Number 1" class="form-control" /><br>
+                <button class="btn btn-warning" onclick="applyHike()">Calculate Final Amount</button>
+                <p id="hikeResult"></p>
+            </div>
+
+
+        </div>
+        <script>
+            function applyHike(currentSalary) {
+                // Calculate the new salary after applying 5% hike
+                let newSalary = currentSalary * 1.05;
+                return newSalary;
+            }
+
+            // Example usage
+            let currentSalary = 22000;  // Current salary of the employee
+            let newSalary = applyHike(currentSalary);
+
+            console.log(`Current Salary: ₹${currentSalary}`);
+            console.log(`New Salary after 5% hike: ₹${newSalary.toFixed(2)}`);
+
+        </script>
+
+        <div class="row mt-4">
+            <div class="col">Grade</div>
+            <div class="col">
+                <input type="number" name="gradeNum" id="gradeNum" placeholder="Number 1" class="form-control" /><br>
+                <button class="btn btn-warning" onclick="checkGrade()">Check</button>
+                <p id="gradeResult"></p>
+                <script>
+                    function checkGrade() {
+                        let gradeNum = Number(document.getElementById('gradeNum').value);
+                        let result = "";
+                        switch (grade) {
+                            case 'A':
+                                90 - 100
+                                break;
+
+                            case 'B':
+                                80 - 90
+                                break;
+
+                            case 'C':
+                                70 - 80
+                                break;
+
+                            case 'D':
+                                60 - 70
+                                break;
+
+                            case 'E':
+                                50 - 60
+                                break;
+
+                            default:
+                            below 50
+
+
+
+                        }
+                        document.getElementById('gradeResult').innerHTML = result;
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">checkAttendance</div>
+            <div class="col">
+                <input type="number" name="totalClasses" id="totalClasses" placeholder="totalClasses 1"
+                    class="form-control" /><br>
+                <input type="number" name="attendedClasses" id="attendedClasses" placeholder="attendedClasses  1"
+                    class="form-control" /><br>
+                <button class="btn btn-warning" onclick="checkAttendance()">CHECK ATTENDANCE</button>
+                <p id="attendanceResult"></p>
+                <script>
+                    function checkAttendance() {
+                        let totalClasses = Number(document.getElementById('totalClasses').value);
+                        let attendedClasses = Number(document.getElementById('attendedClasses').value);
+                        let attendancePercentage = (attendedClasses / totalClasses) * 100;
+                        let result = "";
+                        if (attendancePercentage >= 75) {
+
+                            // let discount = billAmt / 10;
+                            /*
+                            Rs.100  10%  10Rs
+                            100/10 = 10Rs
+        
+                            Rs.200 10% 20Rs
+                            200/10 = 20Rs
+        
+                            Rs.351 10% 35Rs
+                            351/10 = 35Rs
+                            */
+                            result = ("You are allowed to write the exam. Attendance is: " + attendancePercentage.toFixed(2) + "%");
+                        } else {
+                            result = ("You are not allowed to write the exam. Attendance is: " + attendancePercentage.toFixed(2) + "%");
+
+                        }
+                        document.getElementById('attendanceResult').innerHTML = result;
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">SingleDigit</div>
+            <div class="col">
+                <input type="number" name="digitNumber" id="digitNumber" placeholder="number 1"
+                    class="form-control" /><br>
+
+                <button class="btn btn-info" onclick="checkDigitNum()">SingleDigit</button>
+                <p id="checkDigitNum"></p>
+                <script>
+                    function checkDigitNum() {
+                        let digitNumber = Number(document.getElementById('digitNumber').value);
+                        let result = "";
+                        if (digitNumber >= 10 && digitNumber <= 99) {
+                            let tens = Math.floor(digitNumber / 10);  // Get the tens digit
+                            let ones = digitNumber % 10;
+
+                            // Sum the digits
+                            let sum = tens + ones;
+
+
+                            // If the sum is greater than 9, reduce it to a single digit
+                            while (sum >= 10) {
+                                let sumString = sum.toString();
+                                sum = 0;
+                                // Sum the digits of the new number until it's a single digit
+                                for (let digit of sumString) {
+                                    sum += parseInt(digit);
+                                }
+                            }
+
+                            // let discount = billAmt / 10;
+                            /*
+                            Rs.100  10%  10Rs
+                            100/10 = 10Rs
+        
+                            Rs.200 10% 20Rs
+                            200/10 = 20Rs
+        
+                            Rs.351 10% 35Rs
+                            351/10 = 35Rs
+                            */
+                            result = ("The single digit result is: " + sum);
+                        } else {
+                            result = ("Please enter a valid 2-digit number.");
+
+                        }
+                        document.getElementById('checkDigitNum').innerHTML = result;
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col">Reverse number</div>
+            <div class="col">
+                <input type="number" name="reverseNumber" id="reverseNumber" placeholder="number 1"
+                    class="form-control" /><br>
+
+                <button class="btn btn-primary" onclick="checkDigitNum()">SingleDigit</button>
+                <p id="checkRevrseNum"></p>
+                <script>
+                    function checkDigitNum() {
+                        let reverseNumber = Number(document.getElementById('reverseNumber').value);
+                        let result = "";
+                        if (number >= 100 && number <= 999) {
+                            // Convert the number to a string, reverse it, and convert back to number
+                            let reversedNumber = number.toString().split('999').reverse().join('999');
+
+                           
+                           
+                            result = ("The reversed number is: " + reversedNumber);
+                        } else {
+                            result = ("Please enter a valid 3-digit number.");
+
+                        }
+                        document.getElementById('checkRevrseNum').innerHTML = result;
+                    }
+                </script>
+            </div>
+        </div>
+
+
     </div>
 
 </body>

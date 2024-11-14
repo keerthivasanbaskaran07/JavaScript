@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-1" id="northwest">northwest</div>
+            <div class="col-2" id="northeast">northeast</div>
+            <div class="col"></div>
+
+        </div>
+        <div class="row-1" id="westtop">westtop</div>
+        <div class="row-2" id="westbottom">westbottom</div>
+        <div class="row-3" id="easttop">easttop</div>
+        <div class="row-4" id="eastbottom">eastbottom</div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-1" id="southwest">southwest</div>
+            <div class="col-2" id="southeast">southeast</div>
+            <div class="col"></div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                <button type="button" class="btn btn-warning " onclick="north()">NORTH</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning " onclick="west()">WEST</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning " onclick="east()">EAST</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-warning " onclick="south()">SOUTH</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <Script>
+        var northwest;
+        var northeast;
+        var westtop;
+        var westbottom;
+        var easttop;
+        var eastbottom;
+        var southwest;
+        var southeast;
+
+        function getDivs() {
+            northwest = document.getElementById('northwest');
+            northeast = document.getElementById('northeast');
+            westtop = document.getElementById('westtop');
+            westbottom = document.getElementById('westbottom');
+            easttop = document.getElementById('easttop');
+            eastbottom = document.getElementById('eastbottom');
+            southwest = document.getElementById('southwest');
+            southeast = document.getElementById('southeast');
+            SetDefaultSignal();
+
+        }
+
+        
+        function SetDefaultSignal() {
+            northwest.style.backgroundColor = "green";
+            northeast.style.backgroundColor = "green";
+            westtop.style.backgroundColor = "green";
+            westbottom.style.backgroundColor = "green";
+            easttop.style.backgroundColor = "green";
+            eastbottom.style.backgroundColor = "green";
+            southwest.style.backgroundColor = "green";
+            southeast.style.backgroundColor = "green";
+        }
+
+
+
+        getDivs();
+        function north() {
+            SetDefaultSignal();
+
+            northwest.style.backgroundColor = "red";
+            westtop.style.backgroundColor = "red";
+            southwest.style.backgroundColor = "red";
+            eastbottom.style.backgroundColor = "red";
+
+        }
+
+        function west() {
+            SetDefaultSignal();
+
+            westbottom.style.backgroundColor = "red";
+            northeast.style.backgroundColor = "red";
+            eastbottom.style.backgroundColor = "red";
+            southwest.style.backgroundColor = "red";
+
+        }
+
+        function south() {
+            SetDefaultSignal();
+
+            westtop.style.backgroundColor = "red";
+            northeast.style.backgroundColor = "red";
+            eastbottom.style.backgroundColor = "red";
+            southeast.style.backgroundColor = "red";
+
+        }
+
+        function east() {
+            SetDefaultSignal();
+
+            westtop.style.backgroundColor = "red";
+            northeast.style.backgroundColor = "red";
+            easttop.style.backgroundColor = "red";
+            southwest.style.backgroundColor = "red";
+
+        }
+
+
+    </Script>
+
+
+    <style>
+        .col-1 {
+
+            width: 100px;
+            height: 250px;
+            background-color: black;
+            color: aqua;
+
+        }
+
+        .col-2 {
+
+            width: 100px;
+            height: 250px;
+            background-color: black;
+            margin-left: 5px;
+            color: aqua;
+        }
+
+        .row-1 {
+            width: 500px;
+            height: 100px;
+            background-color: black;
+            margin-left: 145.5px;
+            color: aqua;
+
+
+        }
+
+        .row-2 {
+            width: 500px;
+            height: 100px;
+            background-color: black;
+            margin-top: 5px;
+            margin-left: 145.5px;
+            color: aqua;
+
+
+        }
+
+        .row-3 {
+            width: 500px;
+            height: 100px;
+            background-color: black;
+            margin-left: 137px;
+            position: absolute;
+            left: 625px;
+            top: 250px;
+            color: aqua;
+
+
+        }
+
+        .row-4 {
+            width: 500px;
+            height: 100px;
+            background-color: black;
+            margin-top: 5px;
+            margin-left: 137px;
+            position: absolute;
+            left: 625px;
+            top: 350px;
+            color: aqua;
+
+
+        }
+    </style>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
