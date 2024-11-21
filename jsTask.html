@@ -242,7 +242,7 @@
                         let digitNumber = Number(document.getElementById('digitNumber').value);
                         let result = "";
                         if (digitNumber >= 10 && digitNumber <= 99) {
-                            let tens = Math.floor(digitNumber / 10);  // Get the tens digit
+                            let tens = (digitNumber / 10);  // Get the tens digit
                             let ones = digitNumber % 10;
 
                             // Sum the digits

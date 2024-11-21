@@ -67,12 +67,13 @@
     <div class="row mt-4">
       <div class="col">
         <select class="form-select">
-          <option>Shirt</option>
+          <!-- <option>Shirt</option>
           <option>T.Shirt</option>
           <option>Pant</option>
           <option>Saree</option>
           <option>Fork</option>
-          <option>Salvar</option>
+          <option>Salvar</option> -->
+          <span id="productNames"></span>
         </select>
       </div>
       <div class="col"><input type="text" id="pPrice" name="pPrice" onkeyup="getTotal()" class="form-control" /></div>
@@ -134,6 +135,17 @@
 
   </div>
   <script>
+    var products = ["Shirt", "T.Shirt", "Pant", "Frok","Jeans","Saree", "Salwar"];
+    function loadProductNames(){
+      let result = "";
+      for(let idx=0;idx<products.length; idx++){
+        result += "<option>" + products[idx] + "</option>";
+      }
+      console.log(result);
+      console.log(document);
+        document.getElementById('productNames').innerHTML = result;      
+    }
+   loadProductNames();
     function getTotal() {
       let empSalary = Number(document.getElementById('empSalary').value);
       let empYears = Number(document.getElementById('empYears').value);
