@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set & Map</title>
+</head>
+<body>
+    <div>
+        <h2>Set & Map</h2>
+        <script>
+            
+            let uniqueProducts = new Set();
+            uniqueProducts.add("Shirt");
+            uniqueProducts.add("Pant");
+            uniqueProducts.add("Saree");
+            console.log(uniqueProducts);
+            uniqueProducts.add("Shirt");
+            console.log(uniqueProducts);
+            uniqueProducts.add("Salwar");
+            uniqueProducts.delete("Pant");
+            console.log(uniqueProducts);
+            console.log(uniqueProducts.has("Saree"));
+            console.log(uniqueProducts.has("Pant"));
+            uniqueProducts.forEach(product => { console.log(product)});
+            for(let product of uniqueProducts.keys()){
+                console.log("Key : " + product);
+            }
+            for(let product of uniqueProducts.values()){
+                console.log("Value : " + product);
+            }
+            for(let product of uniqueProducts.entries()){
+                console.log("Entry : " + product);
+            }
+           // uniqueProducts.clear();
+            console.log(uniqueProducts.size);
+
+
+            let mapProducts = new Map();
+            mapProducts.set(1001, "Mouse");
+            mapProducts.set(1002, "Keyboard");
+            mapProducts.set(1003, "MousePad");
+            console.log(mapProducts);
+            console.log(mapProducts.get(1005));
+            console.log(mapProducts.has(1005));            
+            console.log(mapProducts.size);
+            console.log(mapProducts.delete(1002));
+            console.log(mapProducts);
+            mapProducts.set(1003, "Bluetooth");
+            console.log(mapProducts);
+            mapProducts.set(1005, "Mouse");
+            console.log(mapProducts);
+            for(let product of mapProducts.keys()){
+                console.log("Key : " + product);
+            }
+            for(let product of mapProducts.values()){
+                console.log("Value : " + product);
+            }
+            for(let product of mapProducts.entries()){
+                console.log("Entry : " + product);
+            }
+            mapProducts.clear();
+            console.log(mapProducts);
+
+            let json= {
+                "pId":1001,
+                "pName": "Laptop",
+                "pPrice": 100000,
+                "stock":120
+            }
+
+
+        </script>
+    </div>
+</body>
+</html>

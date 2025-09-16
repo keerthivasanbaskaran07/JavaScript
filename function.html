@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // function declaration
+        function add(a, b) {
+            return a + b;
+        }
+        console.log(add(5, 6));
+
+        // function expression 
+         const Named = function(a,b){
+            return (a*b)
+         }
+         console.log(Named(10,5))
+
+         // Anonymous function 
+
+         const x = function(a,b){
+            return(a+b);
+         }
+         console.log(x(10,7));
+
+         // arrow key function 
+         // a shorter syntax for using =>
+         const cx = (n) =>{
+            return n * n
+         }
+
+         console.log(cx(7))
+
+         // callback function
+         // a callback function is a function passed as an arguments in another function which is then executed later inside the outer function 
+
+         function mad(name,callback){
+            console.log("hello"+ name +"!");
+            callback();
+         }
+
+         function max(){
+            console.log("goodbye");
+         }
+
+         mad("keerthi",max);
+
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>

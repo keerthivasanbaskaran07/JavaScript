@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h2>Login</h2>
+        <input type="text" id="user" name="user"/>
+        <input type="password" id="pswd" name="pswd"/>
+        <button type="button" onclick="checkLogin()">Login</button>
+    </div>
+    <script>
+        function checkLogin(){
+
+            let user = document.getElementById('user').value;            
+            let pswd = document.getElementById('pswd').value;
+
+            if(user == "anbu" && pswd == "123"){
+                sessionStorage.setItem('user', "logged");
+                window.location.href = "./homeSession.html";
+            }else{
+                alert("Username / password invalid");
+            }
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // class & object
+        // Class: Blueprint/template for creating objects.
+        // Object: Instance of a class.
+
+
+
+        // Class Example
+        // Example of Class and Object
+        class Car {   // Class (Blueprint)
+            constructor(brand, model) {
+                this.brand = brand;
+                this.model = model;
+            }
+
+            display() {
+                console.log(`Car: ${this.brand} ${this.model}`);
+            }
+        }
+
+        const car1 = new Car("Toyota", "Fortuner");  // Object
+        car1.display();  // Output: Car: Toyota Fortuner
+
+
+        // Encapsulation
+        //Wrapping data (variables) and methods into a single unit (class).
+        //Use private fields (#) to restrict direct access.
+
+        class NewBank_ind {
+            #balance; // private
+
+            constructor(initialAmount) {
+                this.#balance = initialAmount;
+
+            }
+
+            deposit(amount) {
+                this.#balance += amount;
+            }
+
+            withdraw(amount) {
+                this.#balance -= amount;
+
+            }
+
+            getbalance() {
+                return this.#balance;
+            }
+
+
+        }
+
+        const account = new NewBank_ind(5000);
+
+        console.log(account.getbalance());
+        account.deposit(3000);
+        console.log(account.getbalance());
+        account.withdraw(1);
+        console.log(account.getbalance());
+
+
+        // inheritance
+        //Child class (derived) can use properties/methods of parent class (base).
+        class Animal {   // Parent Class
+            speak() {
+                console.log("Animal makes a sound");
+            }
+        }
+
+        class Dog extends Animal {   // Child Class (inherits Animal)
+            speak() {
+                console.log("Dog barks");
+            }
+        }
+
+        const d = new Dog();
+        d.speak();  // Output: Dog barks
+
+        // polymorphism
+        //Same method name but different behaviors (overriding).
+
+        class Employee {   // Parent Class
+            calculateSalary() {
+                console.log("Base salary calculation");
+            }
+        }
+
+        class FullTimeEmployee extends Employee {   // Child Class 1
+            calculateSalary() {
+                console.log("Full-time Employee Salary = Base Pay + Benefits");
+            }
+        }
+
+        class PartTimeEmployee extends Employee {   // Child Class 2
+            calculateSalary() {
+                console.log("Part-time Employee Salary = Hourly Rate × Hours Worked");
+            }
+        }
+
+        class Intern extends Employee {   // Child Class 3
+            calculateSalary() {
+                console.log("Intern Stipend = Fixed Monthly Stipend");
+            }
+        }
+
+        // Polymorphism in action ----> method 1
+        const employees = [
+            new FullTimeEmployee(),
+            new PartTimeEmployee(),
+            new Intern()
+        ];
+
+        employees.forEach(emp => emp.calculateSalary());
+        
+        // method 2 
+        // const e1 = new FullTimeEmployee();
+        // const e2 = new PartTimeEmployee();
+        // const e3 = new Intern();
+
+        // e1.calculateSalary();
+        // e2.calculateSalary();
+        // e3.calculateSalary();
+
+        /*
+        Output:
+        Full-time Employee Salary = Base Pay + Benefits
+        Part-time Employee Salary = Hourly Rate × Hours Worked
+        Intern Stipend = Fixed Monthly Stipend
+        */
+
+
+
+
+        // Abstraction
+
+        //*Hiding implementation details and showing only essential info.
+
+        // In JS, we achieve abstraction via abstract-like base classes (no true abstract keyword, but we simulate).
+
+
+        class Vehicle {   // Abstract-like Parent Class
+            startEngine() {
+                throw new Error("startEngine() must be implemented by child class");
+            }
+        }
+
+        class Bike extends Vehicle {   // Child
+            startEngine() {
+                console.log("Bike engine started with self-start button");
+            }
+        }
+
+        const b = new Bike();
+        b.startEngine();  // Output: Bike engine started with self-start button
+
+
+    </script>
+
+</body>
+
+</html>
